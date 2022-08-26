@@ -43,7 +43,7 @@ public class UsernamesChecker {
 
         try (var reader = new BufferedReader(new FileReader(checkFile))) {
             while ((line = reader.readLine()) != null) {
-                var username = line.split(":")[0];
+                var username = line;
                 int finalMax = max;
                 premiumRequest.sendRequest(username, hasPaid -> {
                     var progress = (checked.getAndIncrement() * 100) / finalMax;
